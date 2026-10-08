@@ -10,11 +10,16 @@ The MCP server is hosted and authenticates via OAuth — no local installation r
 use Claude signs you in via your Above Security account (OAuth 2.1 + PKCE). Client registration is
 dynamic, so there's nothing to configure.
 
-## Connector
+## Connectors
 
-| Server | URL | Transport | Auth |
-|--------|-----|-----------|------|
-| `above-security` | `https://mcp.app.abovesec.com/mcp` | HTTP | OAuth (dynamic registration) |
+Above runs a separate deployment per region. The plugin ships one connector per region;
+connect **only** the one that matches the portal you sign in to.
 
-> **EU data residency:** EU-residency customers connect to `https://mcp.app.eu.abovesec.com/mcp`
-> instead. This listing points at the US resource server.
+| Connector | Use it if you sign in at | URL | Transport | Auth |
+|-----------|--------------------------|-----|-----------|------|
+| `above-security` | `app.abovesec.com` (US) | `https://mcp.app.abovesec.com/mcp` | HTTP | OAuth (dynamic registration) |
+| `above-security-eu` | `app.eu.abovesec.com` (EU) | `https://mcp.app.eu.abovesec.com/mcp` | HTTP | OAuth (dynamic registration) |
+
+After installing, open the plugin's **Connectors** tab and connect your region's connector.
+Leave the other one disconnected. Connecting the wrong region fails at sign-in with
+"User not found", because your account lives in the other region.
