@@ -21,5 +21,5 @@ connect **only** the one that matches the portal you sign in to.
 | `above-security-eu` | `app.eu.abovesec.com` (EU) | `https://mcp.app.eu.abovesec.com/mcp` | HTTP | OAuth (dynamic registration) |
 
 After installing, open the plugin's **Connectors** tab and connect your region's connector.
-Leave the other one disconnected. Connecting the wrong region fails at sign-in with
-"User not found", because your account lives in the other region.
+Leave the other one disconnected. Your account lives only in your own region, so
+signing in through the other connector is expected to fail.
